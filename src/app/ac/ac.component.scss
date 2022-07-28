@@ -1,0 +1,27 @@
+.ac {
+  float: left;
+  position: inline;
+  z-index: 0;
+  height: 150px;
+  .ac-label {
+    font-size: 2em;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    top: -132px;
+    left: -2px;
+  }
+  .ac-box {
+    position: relative;
+    z-index: 0;
+    height: 150px;
+  }
+  .ac-score {
+    font-size: 4em;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    top: -150px;
+    left: -2px;
+  }
+}

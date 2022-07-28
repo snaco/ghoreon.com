@@ -1,0 +1,36 @@
+.ability {
+  // width: 100px;
+  float: left;
+  position: inline;
+  z-index: 0;
+  height: 150px;
+  .ability-box {
+    position: relative;
+    z-index: -1;
+    width: 150px;
+  }
+  .ability-label {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    top: -145px;
+  }
+  .ability-score {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    // vertical-align: middle;
+    top: -145px;
+    left: -2px;
+    font-size: 4em;
+  }
+  .ability-mod {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    // vertical-align: middle;
+    top: -143px;
+    left: -1px;
+    font-size: 2em;
+  }
+}
