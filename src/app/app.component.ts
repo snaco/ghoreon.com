@@ -28,6 +28,12 @@ export class AppComponent {
     });
   }
 
+  keyEvent(event: any) {
+    if (event.key === 'Enter') {
+      this.fetchNewData(event.target.value)
+    }
+  }
+
   getStats(): Ability[] {
     return [this.statBlock.str, this.statBlock.dex, this.statBlock.con, this.statBlock.int, this.statBlock.wis, this.statBlock.cha]
   }

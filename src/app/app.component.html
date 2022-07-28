@@ -3,7 +3,7 @@
   <div class="input-area">
     <div class="input-container">
       <label class="input-label">Forms:&nbsp;</label>
-      <input class="input-field" type="text" value="" #inputText />
+      <input class="input-field" type="text" value="" #inputText (keyup)="keyEvent($event)" />
       &nbsp;
       <button class='input-button' type="button" (click)="fetchNewData(inputText.value)">Calculate</button>
     </div>
