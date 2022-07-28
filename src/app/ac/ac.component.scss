@@ -1,6 +1,6 @@
+@use '../../assets/common.scss';
+
 .ac {
-  float: left;
-  position: inline;
   z-index: 0;
   height: 150px;
   .ac-label {
@@ -17,11 +17,11 @@
     height: 150px;
   }
   .ac-score {
-    font-size: 4em;
+    font-size: 3.5em;
     position: relative;
     z-index: 1;
     text-align: center;
-    top: -150px;
+    top: -140px;
     left: -2px;
   }
 }

@@ -1,6 +1,16 @@
 <div class="content" role="main">
-  <div>
+  <h1>Ghoreon Stat Calculation</h1>
+  <div class="input-area">
+    <div class="input-container">
+      <label class="input-label">Forms:&nbsp;</label>
+      <input class="input-field" type="text" value="" #inputText />
+      &nbsp;
+      <button class='input-button' type="button" (click)="fetchNewData(inputText.value)">Calculate</button>
+    </div>
+  </div>
+  <div class="stat-block">
     <app-ability *ngFor="let stat of getStats()" [ability]=stat></app-ability>
+    <div></div>
     <app-ac [score]=statBlock.ac></app-ac>
   </div>
 </div>

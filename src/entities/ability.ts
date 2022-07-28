@@ -1,9 +1,17 @@
 export class Ability {
   abilityType: AbilityType;
+  score: number = 0
 
-  constructor(abilityType: AbilityType, private score: number) {
-    this.score = score;
-    this.abilityType = abilityType;
+  constructor(abilityType?: AbilityType | undefined, score?: number | undefined, ability?: Record<string, any>) {
+    if (abilityType !== undefined && score !== undefined) {
+      this.abilityType = abilityType;
+      this.score = score;
+    } else if (ability) {
+      this.score = ability['score'];
+      this.abilityType = ability['abilityType'] as AbilityType;
+    } else {
+      throw Error('Ability constructor must have score and abilityType provided individually or by a dict');
+    }
   }
 
   getScore(): number {

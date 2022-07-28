@@ -1,0 +1,38 @@
+@use '../assets/common.scss';
+
+.content {
+  h1 {
+    text-align: center;
+  }
+  .input-area {
+    margin: 1em;
+    padding: 0.5em;
+    text-align: center;
+    .input-container {
+      position: relative;
+      .input-label {
+        position: relative;
+      }
+      .input-field {
+        position: relative;
+      }
+      .input-button {
+        position: relative;
+      }
+    }
+  }
+  .stat-block {
+    height: calc(100vh - 11em);
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 33% 33% 33%;
+    border-top: 5px;
+    border-left: 5px;
+    border-right: 5px;
+    border-bottom: 5px;
+    border-style: solid;
+    border-radius: 1em;
+    margin: 1em;
+    padding: 0.5em;
+  }
+}

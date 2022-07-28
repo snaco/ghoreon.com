@@ -14,18 +14,27 @@ export class AppComponent {
 
   constructor(private ghoreonService: GhoreonService) {
     this.statBlock = new StatBlock(
-      new Ability(AbilityType.STR, 15),
-      new Ability(AbilityType.DEX, 12),
-      new Ability(AbilityType.CON, 10),
-      new Ability(AbilityType.INT, 17),
-      new Ability(AbilityType.WIS, 13),
-      new Ability(AbilityType.CHA, 9),
-      12
+      new Ability(AbilityType.STR, 0, undefined),
+      new Ability(AbilityType.DEX, 0, undefined),
+      new Ability(AbilityType.CON, 0, undefined),
+      new Ability(AbilityType.INT, 0, undefined),
+      new Ability(AbilityType.WIS, 0, undefined),
+      new Ability(AbilityType.CHA, 0, undefined),
+      0,
+      undefined
     );
-    this.ghoreonService.getStatBlock().subscribe((statBlock: StatBlock) => this.statBlock = statBlock);
+    this.ghoreonService.getStatBlock('').subscribe((statBlock: StatBlock) => {
+      this.statBlock = new StatBlock(undefined, undefined, undefined, undefined, undefined, undefined, undefined, statBlock);
+    });
   }
 
   getStats(): Ability[] {
     return [this.statBlock.str, this.statBlock.dex, this.statBlock.con, this.statBlock.int, this.statBlock.wis, this.statBlock.cha]
+  }
+
+  fetchNewData(input: string) {
+    this.ghoreonService.getStatBlock(input).subscribe((statBlock: StatBlock) => {
+      this.statBlock = new StatBlock(undefined, undefined, undefined, undefined, undefined, undefined, undefined, statBlock);
+    });
   }
 }
