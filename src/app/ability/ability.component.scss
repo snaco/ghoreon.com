@@ -1,32 +1,42 @@
 @use '../../assets/common.scss';
 
 .ability {
+  display: grid;
+  grid-template-columns: 100% 0 0 0;
+  grid-template-rows: 100%;
+  position: relative;
   z-index: 0;
-  height: 150px;
+  justify-items: center;
+  align-content: center;
+
   .ability-box {
-    z-index: -1;
-    width: 150px;
+    position: relative;
+    z-index: 0;
   }
+
   .ability-label {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     text-align: center;
-    top: -145px;
+    left: -50px;
+    top: 0.5em;
+    font-size: 0.75em;
   }
+
   .ability-score {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     text-align: center;
-    top: -145px;
-    left: -2px;
-    font-size: 4em;
+    font-size: 3em;
+    left: -50px;
+    top: 17px;
   }
+
   .ability-mod {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     text-align: center;
-    top: -143px;
-    left: -1px;
-    font-size: 2em;
+    top: 73.5px;
+    left: -51px;;
   }
 }

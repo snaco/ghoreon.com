@@ -10,6 +10,7 @@ export class GhoreonService {
   getStatBlock(forms?: string): Observable<StatBlock> {
     let request = 'https://4jj3mcijy7rypno3dj3hgp2koq0ryitt.lambda-url.us-east-1.on.aws/';
     if (forms) {
+      forms = forms.toLowerCase();
       request += `?forms=${forms}`;
     }
     return this.http.get<StatBlock>(request);

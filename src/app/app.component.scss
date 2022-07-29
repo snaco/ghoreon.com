@@ -1,38 +1,46 @@
 @use '../assets/common.scss';
 
 .content {
-  h1 {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto 85%;
+  justify-items: center;
+
+  .header {
     text-align: center;
+    position: relative;
+    font-size: 2em;
+    margin: 0;
   }
-  .input-area {
-    margin: 1em;
-    padding: 0.5em;
+
+  .input-container {
     text-align: center;
-    .input-container {
+    position: relative;
+    .input-label {
       position: relative;
-      .input-label {
-        position: relative;
-      }
-      .input-field {
-        position: relative;
-      }
-      .input-button {
-        position: relative;
-      }
+    }
+    .input-field {
+      position: relative;
+    }
+    .input-button {
+      position: relative;
     }
   }
+
   .stat-block {
-    height: calc(100vh - 11em);
+    background-color: rgb(37, 37, 37);
+    position: relative;
+    width: min(66vw, 666px);
     display: grid;
-    justify-items: center;
     grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 40% 40% 20%;
+    justify-items: center;
+    align-content: center;
     border-top: 5px;
     border-left: 5px;
     border-right: 5px;
     border-bottom: 5px;
     border-style: solid;
     border-radius: 1em;
-    margin: 1em;
-    padding: 0.5em;
   }
 }

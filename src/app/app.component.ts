@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AbilityType, Ability as Ability } from 'src/entities/ability';
+import { Ability } from 'src/entities/ability';
 import { StatBlock } from 'src/entities/stat-block';
 import { GhoreonService } from 'src/services/ghoreon.service';
 
@@ -13,16 +13,6 @@ export class AppComponent {
   statBlock: StatBlock;
 
   constructor(private ghoreonService: GhoreonService) {
-    this.statBlock = new StatBlock(
-      new Ability(AbilityType.STR, 0, undefined),
-      new Ability(AbilityType.DEX, 0, undefined),
-      new Ability(AbilityType.CON, 0, undefined),
-      new Ability(AbilityType.INT, 0, undefined),
-      new Ability(AbilityType.WIS, 0, undefined),
-      new Ability(AbilityType.CHA, 0, undefined),
-      0,
-      undefined
-    );
     this.ghoreonService.getStatBlock('').subscribe((statBlock: StatBlock) => {
       this.statBlock = new StatBlock(undefined, undefined, undefined, undefined, undefined, undefined, undefined, statBlock);
     });
@@ -35,7 +25,19 @@ export class AppComponent {
   }
 
   getStats(): Ability[] {
-    return [this.statBlock.str, this.statBlock.dex, this.statBlock.con, this.statBlock.int, this.statBlock.wis, this.statBlock.cha]
+    if (this.statBlock) {
+      return [this.statBlock.str, this.statBlock.dex, this.statBlock.con, this.statBlock.int, this.statBlock.wis, this.statBlock.cha]
+    } else {
+      return [];
+    }
+  }
+
+  getAC(): number {
+    if (this.statBlock) {
+      return this.statBlock.ac;
+    } else {
+      return 0;
+    }
   }
 
   fetchNewData(input: string) {

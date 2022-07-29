@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
 import { Ability, AbilityType } from 'src/entities/ability';
 
 @Component({
@@ -7,7 +7,7 @@ import { Ability, AbilityType } from 'src/entities/ability';
   styleUrls: ['./ability.component.scss']
 })
 export class AbilityComponent implements OnInit {
-  @Input() ability: Ability = new Ability(AbilityType.CHA, 0);
+  @Input() ability: Ability;
 
   constructor() { }
 

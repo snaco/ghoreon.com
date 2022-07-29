@@ -1,18 +1,17 @@
 <div class="content" role="main">
-  <h1>Ghoreon Stat Calculation</h1>
-  <div class="input-area">
-    <div class="input-container">
-      <label class="input-label">Forms:&nbsp;</label>
-      <input class="input-field" type="text" value="" #inputText (keyup)="keyEvent($event)" />
-      &nbsp;
-      <button class='input-button' type="button" (click)="fetchNewData(inputText.value)">Calculate</button>
-    </div>
+  <span class='header'>Ghoreon Stat Calculation</span>
+  <div class="input-container">
+    <label class="input-label">Forms:&nbsp;</label>
+    <input class="input-field" type="text" value="" #inputText (keyup)="keyEvent($event)" />
+    &nbsp;
+    <button class='input-button' type="button" (click)="fetchNewData(inputText.value)">Calculate</button>
   </div>
   <div class="stat-block">
     <app-ability *ngFor="let stat of getStats()" [ability]=stat></app-ability>
     <div></div>
-    <app-ac [score]=statBlock.ac></app-ac>
+    <app-ac [score]=getAC()></app-ac>
   </div>
 </div>
+<footer>Made with love by snaco</footer>
 
 <router-outlet></router-outlet>

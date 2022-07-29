@@ -2,9 +2,16 @@
 html {
   color: white;
   background-color: rgb(37, 37, 37);
-  height: 100vh;
 }
 .inverted {
   -webkit-filter: invert(100%);
   filter: invert(100%);
+}
+
+footer {
+  color: rgb(80, 80, 80);
+  text-align: center;
+  position: absolute;
+  bottom: 1px;
+  z-index: -1;
 }
